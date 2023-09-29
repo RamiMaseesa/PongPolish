@@ -34,7 +34,7 @@ public class BallParticleEffect : GetComponents
 
     private void GivePlanesTrail()
     {
-        // for each object in players add trailrenderer componenet
+        // for each object in players add trailrenderer componenet and change the settings
         foreach(PlayerMovement player in players)
         {
             playerTrail = player.gameObject.AddComponent<TrailRenderer>();
