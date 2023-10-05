@@ -5,37 +5,34 @@ using UnityEngine;
 
 public class AudioScripLinked : MonoBehaviour
 {
-   
+    public AudioClip hit;
+    public AudioClip goal;
+    public AudioSource audioSource;
     // Start is called before the first frame update
 
     // Start is called before the first frame update
     void Start()
     {
-
-        //hit = GetComponent<AudioClip>();
-       // hit = Resources.Load<AudioClip>("Audio/vine-boom (1)");
-        //audiosource = GetComponent<AudioSource>();
         
-      
-       // audiosource.Play();
-        //ballMovement = GetComponent<BallMovement>(); 
-        // ball = GameObject.Find("Ball");
-        //  ball.AddComponent<Rigidbody2D>();
-        // rb = ball.GetComponent<Rigidbody2D>();
-        // gameObject.AddComponent<BallMovement>();
-
-
-        //  FindObjectOfType<BallMovement>();
+        hit = Resources.Load<AudioClip>("Audio/vine-boom (1)");
+        goal = Resources.Load<AudioClip>("Audio/rocket-league-save");
+        audioSource = gameObject.AddComponent<AudioSource>();
+       
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == ("PlayerLeft"))
+        if (collision.gameObject.tag == ("PlayerLeft") || collision.gameObject.tag == ("PlayerRight"))
         {
-           
+            audioSource.PlayOneShot(hit);
             //Resources.Load("Audio/vine-boom (1)");
             //Resources.Load<AudioClip>("Audio/vine-boom (1)");
             print("sexy");
+        }
+        else if(collision.gameObject.tag == ("WallLeft") || collision.gameObject.tag == ("WallRight"))
+        {
+            audioSource.PlayOneShot(goal);
         }
     }
 
