@@ -30,8 +30,13 @@ public class AudioScripLinked : MonoBehaviour
             //Resources.Load<AudioClip>("Audio/vine-boom (1)");
             print("sexy");
         }
-        else if(collision.gameObject.tag == ("WallLeft") || collision.gameObject.tag == ("WallRight"))
+       
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == ("BoundLeft") || collision.gameObject.tag == ("BoundRight"))
         {
+            print("hallo");
             audioSource.PlayOneShot(goal);
         }
     }
