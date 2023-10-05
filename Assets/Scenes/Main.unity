@@ -497,8 +497,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b7ccccb744ae64a9eeb3d6b4b1dfb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowColor: {r: 0, g: 1, b: 0, a: 0.35686275}
-  glowSize: 6.13
+  glowColor: {r: 0, g: 0.9528302, b: 0.030190533, a: 0.6117647}
+  glowSize: 3.99
+  ball2: {fileID: 0}
+  ballMovement: {fileID: 0}
+  ballObject: {fileID: 0}
 --- !u!1 &983938420
 GameObject:
   m_ObjectHideFlags: 0

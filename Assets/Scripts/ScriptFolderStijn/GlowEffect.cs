@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GlowEffect : MonoBehaviour
 {
-    public Color glowColor = Color.green;
+    public Color glowColor = Color.blue;
     public float glowSize = 1.5f;
 
     private SpriteRenderer spriteRenderer;

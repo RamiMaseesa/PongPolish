@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class GlowEffectController : MonoBehaviour
 {
-    public Color glowColor = Color.green;
+    public Color glowColor = Color.blue;
     public float glowSize = 1.5f;
+    public GameObject ball2;
+    public BallMovement ballMovement;
+    public GameObject ballObject;
 
     void Start()
     {
         // Find the "Ball" GameObject using its tag
-        GameObject ballObject = GameObject.FindGameObjectWithTag("Player");
+        ballObject = GameObject.FindGameObjectWithTag("Player");
+        ball2 = Instantiate(ballObject, transform.position, transform.rotation);
+        Destroy(ball2.GetComponent<BallMovement>());
+        Destroy(ball2.GetComponent<CircleCollider2D>());
 
         // Check if the "Ball" GameObject is found
         if (ballObject != null)
@@ -26,5 +32,10 @@ public class GlowEffectController : MonoBehaviour
         {
             Debug.LogWarning("Ball GameObject not found.");
         }
+    }
+
+    private void Update()
+    {
+        ball2.transform.position = ballObject.transform.position;
     }
 }
